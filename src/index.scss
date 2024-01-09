@@ -1,5 +1,22 @@
+:root{
+    --black600: #0c0c0f;
+    --black500: #13131a;
+    --black400: #1f1f29;
+    --black300: #2d2e31;
+
+    --white600: #f7f7f7;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
 }

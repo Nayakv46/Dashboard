@@ -1,0 +1,18 @@
+.dashboard{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 2rem;
+    background: rgb(183,180,179);
+    background: linear-gradient(180deg, rgba(118,115,114,1) 0%, rgba(175,175,179,1) 35%, rgba(205,205,210,1) 100%);
+
+    &__inner-wrapper{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 120rem;
+    }
+}
