@@ -2,16 +2,17 @@ import React from 'react'
 
 import './accordeonItem.scss';
 
-const AccordeonItem = ({openedItem, setOpenedItem, index, image, name, color}) => {
+const AccordeonItem = ({openedItem, setOpenedItem, index, image, name}) => {
 
     return (
     <div
-        className={`accordeonItem ${openedItem === index ? 'accordeonItem--opened' : ''} ${color}`}
+        className={`accordeonItem ${openedItem === index ? 'accordeonItem--opened' : ''}`}
         onClick={() => {
             setOpenedItem(index)
         }}
     >
         <img className='accordeonItem__image' src={image} alt="poster" />
+
 
         <span className='accordeonItem__icon'></span>
 
