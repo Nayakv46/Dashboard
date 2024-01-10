@@ -9,7 +9,8 @@
     border-radius: 3.5rem;
     overflow: hidden;
     cursor: pointer;
-    transition: all 500ms ease;
+    box-shadow: 0.5rem 0.5rem 1rem 0.3rem rgba(0,0,0,0.35);
+    transition: var(--transition);
 
     // opened accordeon item
     &--opened{
@@ -20,37 +21,97 @@
         & > .accordeonItem__image{
             filter: brightness(100%) contrast(100%);
         }
+
+        // dark gradient overlay on bottom
+        & .accordeonItem__overlay {
+            box-shadow: inset 0rem -15rem 15rem -5rem rgba(0,0,0,0.5);
+        }
+
+        // move to left out of view
+        & .accordeonItem__title-short{
+            transform: translate(-3.5rem, 1rem) rotate(90deg);
+        }
+
+        // icon color change
+        & .accordeonItem__icon{
+            border: 0.2rem solid var(--lightblue600);
+            color: var(--lightblue600);
+        }
+
+        // move upward to view
+        & .accordeonItem__title-text{
+            transform: translateY(0);
+        }
     }
 
     // image of closed accordeon item
     &__image{
         display: flex;
         max-width: 100%;
+        -webkit-user-drag: none;
         object-fit: cover;
         object-position: center;
         filter: brightness(60%) contrast(120%);
         transition: 500ms ease;
     }
 
-    &__icon{
+    // overlay on bottom
+    &__overlay{
         position: absolute;
-        bottom: 1.8rem;
-        left: 1.8rem;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        background-color: rgba(200,200,200, 0.5);
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0rem -15rem 15rem -5rem rgba(0, 0, 0, 0);
+        transition: var(--transition);
     }
 
-    &__title{
+    // title on top of closed card
+    &__title-short{
         position: absolute;
-        bottom: 2rem;
-        left: 7rem;
-        color: var(--white600);
-        text-shadow: 0px 0px 3px var(--black300);
+        display: flex;
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--white500);
+        text-wrap: nowrap;
+        transform-origin: 0%;
+        transform: translate(3.2rem, 1.5rem) rotate(90deg);
+        transition: var(--transition);
+    }
+
+    // container of icon and title
+    &__lower-info{
+        position: absolute;
+        left: 1.8rem;
+        bottom: 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 2.7rem;
+        z-index: 3000;
+    }
+
+    &__icon{
+        width: 3rem;
+        height: 3rem;
+        padding: 0.3rem;
+        border: 0.2rem solid var(--white200);
+        border-radius: 50%;
+        color: var(--white200);
+        transition: var(--transition) 500ms;
+    }
+
+    // title container of opened card
+    &__title{
+        color: var(--white500);
         font-size: 2rem;
         font-weight: 500;
         text-wrap: nowrap;
+        overflow: hidden;
 
+        &-text{
+            position: relative;
+            display: flex;
+            transform: translateY(100%);
+            transition: var(--transition) 500ms;
+        }
     }
 }
+

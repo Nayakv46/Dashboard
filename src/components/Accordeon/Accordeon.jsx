@@ -21,6 +21,7 @@ const Accordeon = () => {
                 index={index}
                 image={currElement.img}
                 name={currElement.name}
+                shortName={currElement.shortName}
                 key={index}
             />
 
