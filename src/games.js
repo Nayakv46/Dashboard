@@ -7,9 +7,9 @@ import AcMirage from './assets/AC-mirage.jpg';
 
 export const GamesData = [
     {
-        name: "God of War: Ragnarok",
-        shortName: "GoW: Ragnarok",
-        img: GodOfWar
+        name: "Assassin's Creed: Mirage",
+        shortName: "AC: Mirage",
+        img: AcMirage
     },
     {
         name: "Forza Horizon 5",
@@ -32,8 +32,8 @@ export const GamesData = [
         img: Diablo4
     },
     {
-        name: "Assassin's Creed: Mirage",
-        shortName: "AC: Mirage",
-        img: AcMirage
+        name: "God of War: Ragnarok",
+        shortName: "GoW: Ragnarok",
+        img: GodOfWar
     }
 ]
