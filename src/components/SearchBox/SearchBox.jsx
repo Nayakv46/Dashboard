@@ -15,13 +15,13 @@ const SearchBox = () => {
   return (
     <div className="searchBox__wrapper">
         <input
-            class="searchBox__input"
+            className="searchBox__input"
             required type="text"
             id="searchBox"
             onChange={handleChange}
             value={searchValue}
         />
-        <label class="searchBox__label" for="searchBox">Search</label>
+        <label className="searchBox__label" htmlFor="searchBox">Search</label>
         <IoIosSearch
             className="searchBox__icon"
             onClick={() => {
