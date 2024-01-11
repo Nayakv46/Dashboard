@@ -7,7 +7,6 @@
     padding: 1.2rem 3.2rem;
     border: 0.3rem solid #e5e1e190;
     border-radius: 1rem;
-
     text-transform: uppercase;
     font-family: var(--font-family);
     font-size: 1.5rem;
@@ -16,6 +15,9 @@
 
     // transitioning linear-gradient
     background: linear-gradient(135deg, var(--c1), var(--c2) 51%, var(--c1)) var(--x, 0)/ 500%;
+
+    --c1: rgba(0,0,0, 0.5);
+    --c2: rgba(255, 255, 255, 0.25);
 
     // reflection of button
     -webkit-box-reflect:
@@ -30,9 +32,6 @@
     transition: all 500ms ease, transform 125ms ease;
     cursor: pointer;
 
-    --c1: rgba(0,0,0, 0.5);
-    --c2: rgba(255, 255, 255, 0.25);
-
     &:hover{
         --x: 100%;
         border: 0.3rem solid #e5e1e1ff;
@@ -41,4 +40,27 @@
     &:active{
         transform: scale(0.92);
     }
+}
+
+@media screen and (max-width: 991px){
+    .accordeonItem{
+
+        // position the button out of view
+        .playButton {
+            right: -12rem;
+            transition: right 500ms ease;
+        }
+
+        // position the button into view, when item (card) is opened
+        &--opened {
+            .playButton{
+                right: 1.8rem;
+                transition:
+                    all 500ms ease,
+                    transform 125ms ease,
+                    right 500ms ease 500ms;
+            }
+        }
+    }
+
 }

@@ -47,7 +47,12 @@
 
     // image of closed accordeon item
     &__image{
+        position: absolute;
         display: flex;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
         max-width: 100%;
         -webkit-user-drag: none;
         object-fit: cover;
@@ -123,3 +128,29 @@
     }
 }
 
+@media screen and (max-width: 991px){
+    .accordeonItem {
+        // flex: 1;
+        max-width: 50rem;
+        min-height: 7rem;
+        max-height: 7rem;
+
+        &--opened {
+            flex: 100;
+            max-height: var(--maxHeight);
+            min-height: var(--maxHeight);
+        }
+
+        &__title-short{
+            opacity: 0;
+        }
+
+        &__title-text{
+            transform: translateY(0);
+        }
+
+        &__lower-info {
+            width: calc(100% - 1.8rem);
+        }
+    }
+}
