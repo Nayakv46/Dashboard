@@ -16,6 +16,7 @@
     &--opened{
         flex: 100;
         max-width: 50rem;
+        cursor: default;
 
         // image of opened item
         & > .accordeonItem__image{
@@ -83,9 +84,16 @@
         left: 1.8rem;
         bottom: 1.8rem;
         display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        // accordeonItem (card) width - left - border width*2
+        width: calc(50rem - 1.8rem - 0.2rem*2);
+    }
+
+    &__desc{
+        display: flex;
         align-items: center;
         gap: 2.7rem;
-        z-index: 3000;
     }
 
     &__icon{

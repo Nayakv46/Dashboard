@@ -3,7 +3,6 @@
         position: relative;
         display: flex;
         width: max-content;
-        // border: 0.1rem solid red;
 
         &:has(.searchBox__input:focus){
             .searchBox__input{
@@ -11,7 +10,6 @@
             }
             .searchBox__label{
                 top: 0%;
-                // transform: translate(0%, 0%);
                 transform: translate(0%, -120%);
                 font-size: 1.3rem;
                 cursor: default;
@@ -41,7 +39,6 @@
         position: absolute;
         top: 50%;
         left: 2rem;
-        // background: linear-gradient(0deg, rgba(230,230,230,1) 0%, rgba(225,225,225,1) 100%);
         padding: 0 0.5rem;
         transform: translate(0%, -50%);
         transition: var(--transitionShort);

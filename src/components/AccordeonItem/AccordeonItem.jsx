@@ -2,6 +2,8 @@ import React from 'react'
 
 import './accordeonItem.scss';
 
+import { PlayButton } from '../../components';
+
 import { IoLogoGameControllerB } from "react-icons/io";
 
 const AccordeonItem = ({openedItem, setOpenedItem, index, image, name, shortName}) => {
@@ -25,13 +27,18 @@ const AccordeonItem = ({openedItem, setOpenedItem, index, image, name, shortName
 
         <div className='accordeonItem__lower-info'>
 
-            <IoLogoGameControllerB className="accordeonItem__icon" />
 
-            <span className='accordeonItem__title'>
-                <span className='accordeonItem__title-text'>
-                    {name}
+            <div className='accordeonItem__desc'>
+
+                <IoLogoGameControllerB className="accordeonItem__icon" />
+
+                <span className='accordeonItem__title'>
+                    <span className='accordeonItem__title-text'>
+                        {name}
+                    </span>
                 </span>
-            </span>
+            </div>
+                <PlayButton />
 
         </div>
     </div>
