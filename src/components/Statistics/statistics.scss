@@ -1,0 +1,61 @@
+.statistics__wrapper{
+    position: absolute;
+    bottom: 0%;
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white200);
+    background-color: var(--black300);
+    transform: translate(0%, 0%);
+    transition: var(--transition);
+
+}
+
+.statistics{
+    &__timePlayed{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 7rem;
+        height: 7rem;
+        padding: 0 0.3rem;
+        text-align: center;
+        border: 0.3rem solid var(--white200);
+        border-radius: 50%;
+    }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.inner-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 6.4rem;
+    height: 6.4rem;
+    border-radius: 50%;
+    background-color: var(--black300);
+    font-size: 1.6rem;
+}
+
+.circle-border {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-align: center;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    transition: --angle 1000ms ease-out;
+    background: conic-gradient(red var(--angle), #f0f0f0 var(--angle));
+}

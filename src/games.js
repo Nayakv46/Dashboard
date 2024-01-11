@@ -9,31 +9,55 @@ export const GamesData = [
     {
         name: "Assassin's Creed: Mirage",
         shortName: "AC: Mirage",
-        img: AcMirage
+        img: AcMirage,
+        stats: {
+            timePlayed: "6h 23 min",
+            gameCompletion: "34"
+        }
     },
     {
         name: "Forza Horizon 5",
         shortName: "FH 5",
-        img: ForzaHorizon5
+        img: ForzaHorizon5,
+        stats: {
+            timePlayed: "41h 56 min",
+            gameCompletion: "61"
+        }
     },
     {
         name: "Cyberpunk 2077",
         shortName: "CP 2077",
-        img: Cyberpunk
+        img: Cyberpunk,
+        stats: {
+            timePlayed: "27h 44 min",
+            gameCompletion: "72"
+        }
     },
     {
         name: "Star Wars Jedi: Survivor",
         shortName: "SWJ: Survivor",
-        img: SWJedi
+        img: SWJedi,
+        stats: {
+            timePlayed: "4h 7 min",
+            gameCompletion: "57"
+        }
     },
     {
         name: "Diablo IV",
         shortName: "Diablo IV",
-        img: Diablo4
+        img: Diablo4,
+        stats: {
+            timePlayed: "21h 11 min",
+            gameCompletion: "71"
+        }
     },
     {
         name: "God of War: Ragnarok",
         shortName: "GoW: Ragnarok",
-        img: GodOfWar
+        img: GodOfWar,
+        stats: {
+            timePlayed: "13h 43 min",
+            gameCompletion: "62"
+        }
     }
 ]
