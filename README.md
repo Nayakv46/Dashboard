@@ -8,5 +8,5 @@
 » React JS
 
 <div align="center">
-  <img src="https://github.com/Nayakv46/Car-Rental/assets/130490621/4196543d-d07c-432c-8d37-7f87c508d979](https://github.com/Nayakv46/Maximus/assets/130490621/bb22c5bd-74c1-404a-9189-1e4d9eaaf521)https://github.com/Nayakv46/Maximus/assets/130490621/bb22c5bd-74c1-404a-9189-1e4d9eaaf521" />
+  <img src="https://github.com/Nayakv46/Dashboard/assets/130490621/d724f304-e35d-480b-920f-b9d0ca8fcfb1" />
 </div>
