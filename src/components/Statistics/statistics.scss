@@ -5,13 +5,40 @@
     gap: 2rem;
     width: 100%;
     padding: 2rem;
-    // font-size: 1.4rem;
-    // font-weight: 400;
     color: var(--white200);
     background-color: var(--black300);
-    transform: translate(0%, 0%);
+    transform: translate(0%, 100%);
     transition: var(--transition);
 
+    &--open{
+        transform: translate(0%, 0%);
+
+        .statistics__switch {
+            &-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .statistics__switch {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--black300);
+        padding: 1rem 2rem;
+        border-top-right-radius: 3rem;
+        border-top-left-radius: 3rem;
+        cursor: pointer;
+        transform: translate(0%, -90%);
+
+        &-icon {
+            color: var(--white200);
+            transition: var(--transition);
+        }
+    }
 }
 
 @property --hoursPlayed {
@@ -27,6 +54,19 @@
 }
 
 .statistics{
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        max-width: 11.2rem;
+
+        &-title{
+            color: var(--gray000);
+        }
+    }
+
     &__timePlayed{
         display: flex;
         justify-content: center;
@@ -46,7 +86,19 @@
     }
 }
 
-@property --value {
+@property --numerator {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+
+@property --denominator {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+
+@property --percentage {
     syntax: '<integer>';
     initial-value: 0;
     inherits: false;
@@ -62,12 +114,25 @@
     border-radius: 50%;
     background-color: var(--black300);
     font-size: 1.6rem;
-    transition: --value 1000ms ease-out;
-    counter-reset: num var(--value);
-
-    &:after {
-        content: counter(num) "%";
+    
+    &--percentage {
+        transition: --percentage 1000ms ease-out;
+        counter-reset: percentage var(--percentage);
+        
+        &:after {
+            content: counter(percentage) "%";
+        }
     }
+
+    &--fraction {
+        transition: --numerator 1000ms ease-out, --denominator 1000ms ease-out;
+        counter-reset: numerator var(--numerator) denominator var(--denominator);
+
+        &:after {
+            content: counter(numerator) "/" counter(denominator);
+        }
+    }
+
 }
 
 @property --angle {
@@ -87,5 +152,12 @@
     height: 8rem;
     border-radius: 50%;
     transition: --angle 1000ms ease-out;
-    background: conic-gradient(#00a86b var(--angle), var(--white200) var(--angle));
+
+    &:has(.inner-circle--percentage){
+        background: conic-gradient(var(--green400) var(--angle), var(--white200) var(--angle));
+    }
+
+    &:has(.inner-circle--fraction){
+        background: conic-gradient(var(--gold400) var(--angle), var(--white200) var(--angle));
+    }
 }

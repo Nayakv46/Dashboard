@@ -12,7 +12,9 @@ export const GamesData = [
         img: AcMirage,
         stats: {
             timePlayed: "6h 23 min",
-            gameCompletion: "34%"
+            gameCompletion: "34%",
+            achievementsCompleted: 7,
+            achievementsAll: 32
         }
     },
     {
@@ -21,7 +23,9 @@ export const GamesData = [
         img: ForzaHorizon5,
         stats: {
             timePlayed: "41h 56 min",
-            gameCompletion: "62%"
+            gameCompletion: "62%",
+            achievementsCompleted: 44,
+            achievementsAll: 72
         }
     },
     {
@@ -30,7 +34,9 @@ export const GamesData = [
         img: Cyberpunk,
         stats: {
             timePlayed: "137h 44 min",
-            gameCompletion: "88%"
+            gameCompletion: "88%",
+            achievementsCompleted: 93,
+            achievementsAll: 128
         }
     },
     {
@@ -39,7 +45,9 @@ export const GamesData = [
         img: SWJedi,
         stats: {
             timePlayed: "4h 37 min",
-            gameCompletion: "57%"
+            gameCompletion: "57%",
+            achievementsCompleted: 15,
+            achievementsAll: 26
         }
     },
     {
@@ -48,7 +56,9 @@ export const GamesData = [
         img: Diablo4,
         stats: {
             timePlayed: "21h 11 min",
-            gameCompletion: "24%"
+            gameCompletion: "24%",
+            achievementsCompleted: 28,
+            achievementsAll: 85
         }
     },
     {
@@ -57,7 +67,9 @@ export const GamesData = [
         img: GodOfWar,
         stats: {
             timePlayed: "13h 43 min",
-            gameCompletion: "49%"
+            gameCompletion: "49%",
+            achievementsCompleted: 21,
+            achievementsAll: 58
         }
     }
 ]

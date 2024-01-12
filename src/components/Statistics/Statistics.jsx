@@ -2,55 +2,82 @@ import { useEffect, useState } from 'react';
 
 import './statistics.scss';
 
+import { FaChevronUp } from 'react-icons/fa6';
+
 import { GamesData } from '../../games';
 
 const Statistics = ({openedItem}) => {
 
-  const [toggleView, setToggleView] = useState(false);
+  const [toggleView, setToggleView] = useState(true);
 
   const [gameStatistics, setGameStatistics] = useState(GamesData[openedItem].stats);
 
-  const [timePlayed, setTimePlayed] = useState(0);
-
-  const [completionPercDeg, setCompletionPercDeg] = useState(0);
-
   useEffect(() => {
+
     setGameStatistics(GamesData[openedItem].stats);
-    setCompletionPercDeg(
-      (gameStatistics.gameCompletion.slice(0,2)*3.6)+"deg"
-      );
-    setTimePlayed(
-      parseInt(gameStatistics.timePlayed.slice(0,5)) > 1000 ?
-      parseInt(gameStatistics.timePlayed.slice(0,7)) :
-      parseInt(gameStatistics.timePlayed.slice(0,5))
-    );
-  }, [openedItem, completionPercDeg, gameStatistics.timePlayed, gameStatistics.gameCompletion])
 
-  // console.log(openedItem, gameStatistics)
+  }, [openedItem])
 
-  // FIDDLE WITH USE EFFECT ON TOGGLE VIE TO SET COMPLETIONPERCENTAGE TO 0
-  // FIDDLE SO STATISTICS WILL BE COUNTED TO SIZE OF WEBSITE?
 
   return (
-    <div className='statistics__wrapper'>
-      <div className='statistics__timePlayed'
-        style={{
-          "--hoursPlayed": timePlayed,
-          "--minutesPlayed": gameStatistics.timePlayed.slice(-6,-3)}
-        }
+    <div
+      className={`statistics__wrapper ${toggleView === true ? "statistics__wrapper--open" : ""}
+      `}
       >
-      </div>
 
-      <div className="circle-border"
-        style={{
-          "--angle": completionPercDeg
+      <div className='statistics__switch'
+        onClick={() => {
+        setToggleView(!toggleView)
         }}
       >
-        <div className='inner-circle'
+        <FaChevronUp className="statistics__switch-icon" />
+      </div>
+
+      <div className='statistics__box'>
+        <span className='statistics__box-title'>Total Playtime</span>
+
+        <div className='statistics__timePlayed'
           style={{
-            "--value": gameStatistics.gameCompletion.slice(0,-1)
+            "--hoursPlayed": parseInt(gameStatistics.timePlayed),
+            "--minutesPlayed": parseInt(gameStatistics.timePlayed.slice(-6,-3))}
+          }
+        >
+        </div>
+      </div>
+
+      <div className='statistics__box'>
+        <span className='statistics__box-title'>Game Completion</span>
+
+        <div className="circle-border"
+          style={{
+            "--angle": parseInt(gameStatistics.gameCompletion)*3.6+"deg"
           }}
         >
+          <div className='inner-circle inner-circle--percentage'
+            style={{
+              "--percentage": parseInt(gameStatistics.gameCompletion)
+            }}
+          >
+          </div>
+        </div>
+      </div>
+
+      <div className='statistics__box'>
+        <span className='statistics__box-title'>Achievements</span>
+
+        <div className='circle-border'
+          style={{
+            "--angle": ((gameStatistics.achievementsCompleted/gameStatistics.achievementsAll)*360)+"deg"
+          }}
+        >
+            <div className='inner-circle inner-circle--fraction'
+              style={{
+                "--numerator": gameStatistics.achievementsCompleted,
+                "--denominator": gameStatistics.achievementsAll
+              }}
+            >
+
+            </div>
         </div>
       </div>
 
