@@ -25,9 +25,7 @@ const SearchBox = () => {
         <IoIosSearch
             className="searchBox__icon"
             onClick={() => {
-                if(searchValue !== ""){
-                    alert("Sorry, it's just a design, so we cannot find what you're looking for.")
-                }
+                    alert("Sorry, it's just a design, so we cannot find what you're looking for. \nBut you can check out the statistics changing with opening other games!");
             }}
         />
     </div>
