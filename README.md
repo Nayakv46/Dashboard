@@ -1,6 +1,6 @@
 <p>Design idea for library browsing filled with smooth transitions and statistics overview.</p>
 
-👉 <a href='https://dashboard46.vercel.app' target="_blank" rel="noreferrer" >Live Demo</a>
+👉 <a href='https://dashboardv46.vercel.app' target="_blank" rel="noreferrer" >Live Demo</a>
 
 <h3>Built with:</h3>
 
